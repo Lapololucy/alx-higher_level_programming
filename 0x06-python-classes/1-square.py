@@ -1,19 +1,14 @@
 #!/usr/bin/python3
-"""Square module definition.
 
-This module defines a simple `Square` class
-"""
+"""Define a class Square."""
 
 
 class Square:
-    """A simple ``Square`` class
+    """Represent a square."""
 
-    Attributes:
-        size (`int`): The size of the ``Square``.
-    """
     def __init__(self, size):
-        """Constructs a ``Square`` objet
+        """Initialize a new Square.
         Args:
-            size (`int`): The size of the ``Square``.
+            size (int): The size of the new square.
         """
-        self.__Square__size = size
+        self.__size = size
