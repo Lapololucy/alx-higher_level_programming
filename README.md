@@ -1,1 +1,2 @@
 Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components togethe
+![NOT SURE IF C HAS TAUGHT ME](https://user-images.githubusercontent.com/113608901/226535230-5a13bf2e-9dc0-43c5-a86c-bea99203406c.jpg)
