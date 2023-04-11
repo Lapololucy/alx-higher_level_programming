@@ -12,5 +12,5 @@ function factorial(n) {
 const arg = process.argv[2];
 const num = parseInt(arg);
 
-console.log(factorial(num));
+console.log(factorial(Number(process.argv[2])));
 
