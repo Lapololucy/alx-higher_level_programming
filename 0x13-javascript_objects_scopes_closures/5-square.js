@@ -1,15 +1,17 @@
 #!/usr/bin/node
-// Import the Rectangle class
-const Rectangle = require('./4-rectangle.js');
+/**
+ * import thr Rectangle class
+ * Define the square class that inherits from Rectangle
+ * call the constructor of the Rectangle with the size arguement for both width
+ * Export the square class
+ */
 
-// Define the Square class that inherits from Rectangle
+const Rectangle = require('./4-rectangle');
+
 class Square extends Rectangle {
-  constructor(size) {
-    // Call the constructor of Rectangle with the size argument for both width and height
+  constructor (size) {
     super(size, size);
   }
 }
 
-// Export the Square class
 module.exports = Square;
-
