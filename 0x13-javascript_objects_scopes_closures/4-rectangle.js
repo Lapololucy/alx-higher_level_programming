@@ -6,19 +6,23 @@ class Rectangle {
       this.height = h;
     }
   }
-	print () {
+
+  print () {
     for (let i = 0; i < this.height; i++) {
       const temp = [];
       for (let j = 0; j < this.width; j++) temp.push('X');
       console.log(`${temp.join('')}`);
     }
   }
-	rotate () {
-    [this.width, this.height] = [this.height, this.width];
-	}
-	double () {
+
+  double () {
     this.width *= 2;
     this.height *= 2;
-	}
+  }
+
+  rotate () {
+    [this.width, this.height] = [this.height, this.width];
+  }
 }
+
 module.exports = Rectangle;
