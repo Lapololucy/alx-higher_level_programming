@@ -1,20 +1,26 @@
 #!/usr/bin/python3
-"""A script that takes your Github credentials,
-- (Username and password)
-- uses the GithHub API to display your ID
 """
-
+Module to access to the GitHub API and uses the information
+"""
 import requests
-import sys
+from requests.auth import HTTPBasicAuth
+from sys import argv
 
-username = sys.argv[1]
-password = sys.argv[2]
 
-url = 'https://api.github.com/user'
-response = requests.get(url, auth=(username, password))
+def main(argv):
+    """
+    Script that takes your GitHub credentials (username and password) and
+    uses the GitHub API to display your id.
+    """
+    user = argv[1]
+    password = argv[2]
+    response = requests.get('https://api.github.com/user',
+                            auth=HTTPBasicAuth(user, password))
+    try:
+        profile_info = response.json()
+        print(profile_info['id'])
+    except:
+        print('None')
 
-if response.status_code == 200:
-    user_data = response.json()
-    print(f"User ID: {user_data['id']}")
-else:
-    print(f"Error: {response.status_code} - {response.reason}")
+if __name__ == "__main__":
+    main(argv)

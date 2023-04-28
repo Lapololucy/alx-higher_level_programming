@@ -1,32 +1,22 @@
 #!/usr/bin/python3
-
 """
-This module sends a request to a given URL,
-and displays the value of the variable
-X-Request-Id in the response header.
+Displays the value of the X-Request-Id variable
+found in the header of the response
 """
-
 import requests
-import sys
+from sys import argv
 
 
-def main():
-    # Check that the script is called with one argument
-    if len(sys.argv) != 2:
-        print("Usage: python3 script.py <URL>")
-        return
-
-    # Send a request to the given URL and get the response header
-    response = requests.get(sys.argv[1])
-    headers = response.headers
-
-    # Check if the X-Request-Id header is present in the response
-    if "X-Request-Id" in headers:
-        x_request_id = headers.get("X-Request-Id")
-        print(f"The X-Request-Id is: {x_request_id}")
-    else:
-        print("The X-Request-Id header is not present in the response.")
-
+def main(argv):
+    """
+    Method that takes in a URL, sends a request to the URL
+    and displays the value of the X-Request-Id variable
+    found in the header of the response
+    """
+    url = argv[1]
+    r = requests.get(url)
+    headers = r.headers.get('X-Request-Id')
+    print(headers)
 
 if __name__ == "__main__":
-    main()
+    main(argv)
